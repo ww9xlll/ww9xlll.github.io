@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on prepoet</title>
+    <link>http://prepoet.github.io/post/</link>
+    <description>Recent content in Posts on prepoet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2016 17:45:07 +0800</lastBuildDate>
+    <atom:link href="http://prepoet.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>learn mongodb</title>
+      <link>http://prepoet.github.io/post/learn-mongodb/</link>
+      <pubDate>Sat, 02 Jan 2016 17:45:07 +0800</pubDate>
+      
+      <guid>http://prepoet.github.io/post/learn-mongodb/</guid>
+      <description>
+
+&lt;h2 id=&#34;数据类型:bed19424a798b4d384457857c2785c4a&#34;&gt;数据类型&lt;/h2&gt;
+
+&lt;h3 id=&#34;numberlong:bed19424a798b4d384457857c2785c4a&#34;&gt;NumberLong&lt;/h3&gt;
+
+&lt;p&gt;By default, the mongo shell treats all numbers as floating-point values.&lt;/p&gt;
+
+&lt;p&gt;NumberLong() wrapper to handle 64-bit integers.&lt;/p&gt;
+
+&lt;p&gt;NumberInt() constructor to explicitly specify 32-bit integers.&lt;/p&gt;
+
+&lt;h3 id=&#34;日期:bed19424a798b4d384457857c2785c4a&#34;&gt;日期&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/yuechaotian/archive/2013/02/02/2889824.html&#34;&gt;mongo-日期类型（2）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MongoDB默认以UTC存储时间，即GMT，北京时间为GMT+8:00&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用new Date()和使用Date()是不一样的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;db.test.insert({mark:1, date:new Date()})
+db.test.insert({mark:2, date:Date()})
+db.test.find()&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;{ &amp;ldquo;_id&amp;rdquo; : ObjectId(&amp;ldquo;5126e00939899c4cf3805f9b&amp;rdquo;), &amp;ldquo;date&amp;rdquo; : ISODate(&amp;ldquo;2013-02-22T03:03:37.312Z&amp;rdquo;) }
+{ &amp;ldquo;_id&amp;rdquo; : ObjectId(&amp;ldquo;5126e00c39899c4cf3805f9c&amp;rdquo;), &amp;ldquo;date&amp;rdquo; : &amp;ldquo;Fri Feb 22 2013 11:03:40 GMT+0800&amp;rdquo; }&lt;/p&gt;
+
+&lt;p&gt;使用new Date()，插入的是一个ISODate类型；而使用Date()插入的是一个字符串类型。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;如果通过get函数来获取，那么mongo会自动转换成当前时区的时间&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;find:bed19424a798b4d384457857c2785c4a&#34;&gt;find&lt;/h2&gt;
+
+&lt;h2 id=&#34;aggregate:bed19424a798b4d384457857c2785c4a&#34;&gt;aggregate&lt;/h2&gt;
+
+&lt;p&gt;执行本地js &lt;code&gt;mongo localhost:27017/dc active_7.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;通过shell传参数&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;mongo localhost:27017/wangwei --eval &amp;quot;var start_h=new Date(1441843200000),end_h=new Date(1441929600000)&amp;quot; /home/wangwei/user.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10114355/how-to-pass-argument-to-mongo-script/10114802#10114802&#34;&gt;How to pass argument to Mongo Script&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;java-driver:bed19424a798b4d384457857c2785c4a&#34;&gt;Java Driver&lt;/h2&gt;
+
+&lt;p&gt;MongoClient instance 代表一个数据库连接池，即使需要多线程，也只需要一个实例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;MongoClient client = new MongoClient();
+MongoDatabase database = client.getDatabase(&amp;quot;mydb&amp;quot;);
+MongoCollection&amp;lt;Document&amp;gt; collection = database.getCollection(&amp;quot;mycoll&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;需要注意的:bed19424a798b4d384457857c2785c4a&#34;&gt;需要注意的&lt;/h2&gt;
+
+&lt;p&gt;mongo update 默认只更新一条，需要显示的&lt;code&gt;{multi:true}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;删除db:bed19424a798b4d384457857c2785c4a&#34;&gt;删除db&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;db.dropDatabase()&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
