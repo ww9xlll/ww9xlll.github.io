@@ -72,7 +72,7 @@
 
 <p>NumberInt() constructor to explicitly specify 32-bit integers.</p>
 
-<h2 id="日期:bed19424a798b4d384457857c2785c4a">日期</h2>
+<h3 id="日期:bed19424a798b4d384457857c2785c4a">日期</h3>
 
 <p><a href="http://www.cnblogs.com/yuechaotian/archive/2013/02/02/2889824.html">mongo-日期类型（2）</a></p>
 
@@ -93,6 +93,8 @@ db.test.find()</p>
 
 <p><strong>如果通过get函数来获取，那么mongo会自动转换成当前时区的时间</strong></p>
 
+<h2 id="操作:bed19424a798b4d384457857c2785c4a">操作</h2>
+
 <h3 id="aggregate:bed19424a798b4d384457857c2785c4a">aggregate</h3>
 
 <p>执行本地js <code>mongo localhost:27017/user user.js</code></p>
@@ -108,7 +110,11 @@ db.test.find()</p>
 
 <p><code>db.dropDatabase()</code></p>
 
-<h2 id="java-driver:bed19424a798b4d384457857c2785c4a">Java Driver</h2>
+<h3 id="需要注意的:bed19424a798b4d384457857c2785c4a">需要注意的</h3>
+
+<p>mongo update 默认只更新一条，需要显示的<code>{multi:true}</code></p>
+
+<h3 id="java-driver:bed19424a798b4d384457857c2785c4a">Java Driver</h3>
 
 <p>MongoClient instance 代表一个数据库连接池，即使需要多线程，也只需要一个实例</p>
 
@@ -116,10 +122,6 @@ db.test.find()</p>
 MongoDatabase database = client.getDatabase(&quot;mydb&quot;);
 MongoCollection&lt;Document&gt; collection = database.getCollection(&quot;mycoll&quot;);
 </code></pre>
-
-<h2 id="需要注意的:bed19424a798b4d384457857c2785c4a">需要注意的</h2>
-
-<p>mongo update 默认只更新一条，需要显示的<code>{multi:true}</code></p>
 
       
       

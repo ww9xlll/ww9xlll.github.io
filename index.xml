@@ -27,7 +27,7 @@
 
 &lt;p&gt;NumberInt() constructor to explicitly specify 32-bit integers.&lt;/p&gt;
 
-&lt;h2 id=&#34;日期:bed19424a798b4d384457857c2785c4a&#34;&gt;日期&lt;/h2&gt;
+&lt;h3 id=&#34;日期:bed19424a798b4d384457857c2785c4a&#34;&gt;日期&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/yuechaotian/archive/2013/02/02/2889824.html&#34;&gt;mongo-日期类型（2）&lt;/a&gt;&lt;/p&gt;
 
@@ -48,6 +48,8 @@ db.test.find()&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;如果通过get函数来获取，那么mongo会自动转换成当前时区的时间&lt;/strong&gt;&lt;/p&gt;
 
+&lt;h2 id=&#34;操作:bed19424a798b4d384457857c2785c4a&#34;&gt;操作&lt;/h2&gt;
+
 &lt;h3 id=&#34;aggregate:bed19424a798b4d384457857c2785c4a&#34;&gt;aggregate&lt;/h3&gt;
 
 &lt;p&gt;执行本地js &lt;code&gt;mongo localhost:27017/user user.js&lt;/code&gt;&lt;/p&gt;
@@ -63,7 +65,11 @@ db.test.find()&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;db.dropDatabase()&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;java-driver:bed19424a798b4d384457857c2785c4a&#34;&gt;Java Driver&lt;/h2&gt;
+&lt;h3 id=&#34;需要注意的:bed19424a798b4d384457857c2785c4a&#34;&gt;需要注意的&lt;/h3&gt;
+
+&lt;p&gt;mongo update 默认只更新一条，需要显示的&lt;code&gt;{multi:true}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;java-driver:bed19424a798b4d384457857c2785c4a&#34;&gt;Java Driver&lt;/h3&gt;
 
 &lt;p&gt;MongoClient instance 代表一个数据库连接池，即使需要多线程，也只需要一个实例&lt;/p&gt;
 
@@ -71,10 +77,6 @@ db.test.find()&lt;/p&gt;
 MongoDatabase database = client.getDatabase(&amp;quot;mydb&amp;quot;);
 MongoCollection&amp;lt;Document&amp;gt; collection = database.getCollection(&amp;quot;mycoll&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;需要注意的:bed19424a798b4d384457857c2785c4a&#34;&gt;需要注意的&lt;/h2&gt;
-
-&lt;p&gt;mongo update 默认只更新一条，需要显示的&lt;code&gt;{multi:true}&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
