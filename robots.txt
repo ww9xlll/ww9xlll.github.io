@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://thinkdiffw.github.io/sitemap.xml
