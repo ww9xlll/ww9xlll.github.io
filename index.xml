@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ThinkDiffW</title><link>https://thinkdiffw.github.io/</link><description>Recent content on ThinkDiffW</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Dec 2022 15:50:34 +0800</lastBuildDate><atom:link href="https://thinkdiffw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://thinkdiffw.github.io/posts/hello-world/</link><pubDate>Wed, 14 Dec 2022 15:50:34 +0800</pubDate><guid>https://thinkdiffw.github.io/posts/hello-world/</guid><description>Hello World</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ThinkDiffW</title><link>https://thinkdiffw.github.io/</link><description>Recent content on ThinkDiffW</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Dec 2022 15:50:34 +0800</lastBuildDate><atom:link href="https://thinkdiffw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://thinkdiffw.github.io/posts/hello-world/</link><pubDate>Wed, 14 Dec 2022 15:50:34 +0800</pubDate><guid>https://thinkdiffw.github.io/posts/hello-world/</guid><description>Hello World</description></item><item><title>Gin Learn</title><link>https://thinkdiffw.github.io/posts/gin-learn/</link><pubDate>Wed, 14 Dec 2022 15:48:40 +0800</pubDate><guid>https://thinkdiffw.github.io/posts/gin-learn/</guid><description>概览 与Spring MVC对比 @Controller RouterGroup.Group() ，路由分组
+@RequestMapping RouterGroup.GET(), RouterGroup.POST()…
+@RequestParam Spring MVC中@RequestParma适用于query, form data , multipart，gin会细分
+Context.Query(), Context.DefaultQuery()
+Context.PostForm(), Context.DefaultPostForm()
+@RequestParam MultiPartFile ↔ Context.FormFile()
+@PathVariable “/url/:param/*action”, Context.Param()
+@RequestBody Bind() 利用content-type和struct tag解析支持url path、header、query、form-data、json、xml等，ShouldBindQuery，ShouldBindJSON
+MustBindWith() 异常情况下中断请求并返回400
+由于Request.Body只能读取一次，使用ShouldBindBodyWith() 可以缓存Body，对性能有轻微的影响
+@Valid JSR303 OR @Validated @Validated相比较JSR303@Valid 增加了分组校验
+type Login struct { User string `json:&amp;#34;user&amp;#34; binding:&amp;#34;required&amp;#34;` Password string `json:&amp;#34;password&amp;#34; binding:&amp;#34;required&amp;#34;` } @ResponseBody Context.JSON(), Context.String(), Context.XML(), Context.File()
+静态资源
+RouterGroup.StaticFile() 返回单个文件
+RouterGroup.Static(&amp;quot;/static&amp;quot;, &amp;quot;/var/www&amp;quot;) 返回指定目录下文件
+Context.HTML() HTML模版渲染
+自定义渲染 Contenxt.DataFromReader() 或者 Contenxt.</description></item></channel></rss>
