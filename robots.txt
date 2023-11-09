@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://ww9xlll.github.io/sitemap.xml
+Sitemap: https://blog.ww93.fun/sitemap.xml
