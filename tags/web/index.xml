@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>web on Wei's Note</title><link>https://blog.ww93.fun/tags/web/</link><description>Recent content in web on Wei's Note</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>ww9xlll</copyright><lastBuildDate>Sun, 18 Dec 2022 15:48:40 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Gin Learn</title><link>https://blog.ww93.fun/post/gin-learn/</link><pubDate>Sun, 18 Dec 2022 15:48:40 +0800</pubDate><guid>https://blog.ww93.fun/post/gin-learn/</guid><description>概览 与Spring MVC对比 @Controller RouterGroup.Group() ，路由分组 @RequestMapping RouterGroup.GET(), RouterGroup.POST()… @RequestParam Spring MVC中@RequestParma适用于query,</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Wei's Note</title><link>https://blog.ww93.fun/tags/web/</link><description>Recent content in Web on Wei's Note</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 18 Dec 2022 15:48:40 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Gin Learn</title><link>https://blog.ww93.fun/post/gin-learn/</link><pubDate>Sun, 18 Dec 2022 15:48:40 +0800</pubDate><guid>https://blog.ww93.fun/post/gin-learn/</guid><description>&lt;h1 id="概览">概览&lt;/h1>
+&lt;h2 id="与spring-mvc对比">与Spring MVC对比&lt;/h2>
+&lt;h3 id="controller">@Controller&lt;/h3>
+&lt;p>RouterGroup.Group() ，路由分组&lt;/p>
+&lt;h3 id="requestmapping">@RequestMapping&lt;/h3>
+&lt;p>RouterGroup.GET(), RouterGroup.POST()…&lt;/p>
+&lt;h3 id="requestparam">@RequestParam&lt;/h3>
+&lt;p>Spring MVC中@RequestParma适用于query, form data , multipart，gin会细分&lt;/p>
+&lt;p>Context.Query(), Context.DefaultQuery()&lt;/p>
+&lt;p>Context.PostForm(), Context.DefaultPostForm()&lt;/p>
+&lt;p>&lt;code>@RequestParam MultiPartFile&lt;/code> ↔ Context.FormFile()&lt;/p>
+&lt;h3 id="pathvariable">@PathVariable&lt;/h3>
+&lt;p>“/url/:param/*action”, Context.Param()&lt;/p>
+&lt;h3 id="requestbody">@RequestBody&lt;/h3>
+&lt;p>&lt;code>Bind()&lt;/code> 利用content-type和struct tag解析支持url path、header、query、form-data、json、xml等，ShouldBindQuery，ShouldBindJSON&lt;/p>
+&lt;p>&lt;code>MustBindWith()&lt;/code> 异常情况下中断请求并返回400&lt;/p>
+&lt;p>由于Request.Body只能读取一次，使用&lt;code>ShouldBindBodyWith()&lt;/code> 可以缓存Body，对性能有轻微的影响&lt;/p>
+&lt;h3 id="valid-jsr303-or-validated">@Valid JSR303 OR @Validated&lt;/h3>
+&lt;p>@Validated相比较JSR303@Valid 增加了分组校验&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Login&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">User&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#e6db74">`json:&amp;#34;user&amp;#34; binding:&amp;#34;required&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Password&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#e6db74">`json:&amp;#34;password&amp;#34; binding:&amp;#34;required&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="responsebody">@ResponseBody&lt;/h3>
+&lt;p>Context.JSON(), Context.String(), Context.XML(), Context.File()&lt;/p>
+&lt;p>静态资源&lt;/p>
+&lt;p>&lt;code>RouterGroup.StaticFile()&lt;/code> 返回单个文件&lt;/p>
+&lt;p>&lt;code>RouterGroup.Static(&amp;quot;/static&amp;quot;, &amp;quot;/var/www&amp;quot;)&lt;/code> 返回指定目录下文件&lt;/p>
+&lt;p>&lt;code>Context.HTML()&lt;/code> HTML模版渲染&lt;/p>
+&lt;p>自定义渲染 &lt;code>Contenxt.DataFromReader()&lt;/code> 或者 &lt;code>Contenxt.Render()&lt;/code>&lt;/p>
+&lt;h3 id="handlerinterceptor">HandlerInterceptor&lt;/h3>
+&lt;p>全局的 Engine.Use() 或者 自定义path的RouterGroup.Use()&lt;/p></description></item></channel></rss>

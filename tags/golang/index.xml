@@ -1,1 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>golang on Wei's Note</title><link>https://blog.ww93.fun/tags/golang/</link><description>Recent content in golang on Wei's Note</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>ww9xlll</copyright><lastBuildDate>Sun, 18 Dec 2022 15:48:40 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Gin Learn</title><link>https://blog.ww93.fun/post/gin-learn/</link><pubDate>Sun, 18 Dec 2022 15:48:40 +0800</pubDate><guid>https://blog.ww93.fun/post/gin-learn/</guid><description>概览 与Spring MVC对比 @Controller RouterGroup.Group() ，路由分组 @RequestMapping RouterGroup.GET(), RouterGroup.POST()… @RequestParam Spring MVC中@RequestParma适用于query,</description></item><item><title>Go Learn</title><link>https://blog.ww93.fun/post/go-learn/</link><pubDate>Sat, 17 Dec 2022 15:48:40 +0800</pubDate><guid>https://blog.ww93.fun/post/go-learn/</guid><description>数据类型 array 初始化， b := [2]string{&amp;quot;Penn&amp;quot;, &amp;quot;Teller&amp;quot;} 初始化，编译器计算自动计算长度 b := [...]string{&amp;quot;Penn&amp;quot;, &amp;quot;Teller&amp;quot;} 数组的赋值是直接拷贝整个数组，变量赋值本质上是一次内存浅拷贝，切片的赋值是拷</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Wei's Note</title><link>https://blog.ww93.fun/tags/golang/</link><description>Recent content in Golang on Wei's Note</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 18 Dec 2022 15:48:40 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Gin Learn</title><link>https://blog.ww93.fun/post/gin-learn/</link><pubDate>Sun, 18 Dec 2022 15:48:40 +0800</pubDate><guid>https://blog.ww93.fun/post/gin-learn/</guid><description>&lt;h1 id="概览">概览&lt;/h1>
+&lt;h2 id="与spring-mvc对比">与Spring MVC对比&lt;/h2>
+&lt;h3 id="controller">@Controller&lt;/h3>
+&lt;p>RouterGroup.Group() ，路由分组&lt;/p>
+&lt;h3 id="requestmapping">@RequestMapping&lt;/h3>
+&lt;p>RouterGroup.GET(), RouterGroup.POST()…&lt;/p>
+&lt;h3 id="requestparam">@RequestParam&lt;/h3>
+&lt;p>Spring MVC中@RequestParma适用于query, form data , multipart，gin会细分&lt;/p>
+&lt;p>Context.Query(), Context.DefaultQuery()&lt;/p>
+&lt;p>Context.PostForm(), Context.DefaultPostForm()&lt;/p>
+&lt;p>&lt;code>@RequestParam MultiPartFile&lt;/code> ↔ Context.FormFile()&lt;/p>
+&lt;h3 id="pathvariable">@PathVariable&lt;/h3>
+&lt;p>“/url/:param/*action”, Context.Param()&lt;/p>
+&lt;h3 id="requestbody">@RequestBody&lt;/h3>
+&lt;p>&lt;code>Bind()&lt;/code> 利用content-type和struct tag解析支持url path、header、query、form-data、json、xml等，ShouldBindQuery，ShouldBindJSON&lt;/p>
+&lt;p>&lt;code>MustBindWith()&lt;/code> 异常情况下中断请求并返回400&lt;/p>
+&lt;p>由于Request.Body只能读取一次，使用&lt;code>ShouldBindBodyWith()&lt;/code> 可以缓存Body，对性能有轻微的影响&lt;/p>
+&lt;h3 id="valid-jsr303-or-validated">@Valid JSR303 OR @Validated&lt;/h3>
+&lt;p>@Validated相比较JSR303@Valid 增加了分组校验&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Login&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">User&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#e6db74">`json:&amp;#34;user&amp;#34; binding:&amp;#34;required&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Password&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#e6db74">`json:&amp;#34;password&amp;#34; binding:&amp;#34;required&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="responsebody">@ResponseBody&lt;/h3>
+&lt;p>Context.JSON(), Context.String(), Context.XML(), Context.File()&lt;/p>
+&lt;p>静态资源&lt;/p>
+&lt;p>&lt;code>RouterGroup.StaticFile()&lt;/code> 返回单个文件&lt;/p>
+&lt;p>&lt;code>RouterGroup.Static(&amp;quot;/static&amp;quot;, &amp;quot;/var/www&amp;quot;)&lt;/code> 返回指定目录下文件&lt;/p>
+&lt;p>&lt;code>Context.HTML()&lt;/code> HTML模版渲染&lt;/p>
+&lt;p>自定义渲染 &lt;code>Contenxt.DataFromReader()&lt;/code> 或者 &lt;code>Contenxt.Render()&lt;/code>&lt;/p>
+&lt;h3 id="handlerinterceptor">HandlerInterceptor&lt;/h3>
+&lt;p>全局的 Engine.Use() 或者 自定义path的RouterGroup.Use()&lt;/p></description></item><item><title>Go Learn</title><link>https://blog.ww93.fun/post/go-learn/</link><pubDate>Sat, 17 Dec 2022 15:48:40 +0800</pubDate><guid>https://blog.ww93.fun/post/go-learn/</guid><description>&lt;h1 id="数据类型">数据类型&lt;/h1>
+&lt;h2 id="array">array&lt;/h2>
+&lt;ol>
+&lt;li>初始化， &lt;code>b := [2]string{&amp;quot;Penn&amp;quot;, &amp;quot;Teller&amp;quot;}&lt;/code>&lt;/li>
+&lt;li>初始化，编译器计算自动计算长度 &lt;code>b := [...]string{&amp;quot;Penn&amp;quot;, &amp;quot;Teller&amp;quot;}&lt;/code>&lt;/li>
+&lt;li>数组的赋值是直接拷贝整个数组，变量赋值本质上是一次内存浅拷贝，切片的赋值是拷贝了切片头，字符串的赋值是拷贝了字符串的头部，接口变量的赋值同样是浅拷贝&lt;/li>
+&lt;/ol>
+&lt;h2 id="string">string&lt;/h2>
+&lt;p>&lt;strong>&lt;a href="https://go.dev/blog/strings">Strings, bytes, runes and characters in Go&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>等价于一个只读的字节Slice&lt;/p>
+&lt;p>len 方法返回的时候字节数，非字符数&lt;/p>
+&lt;h3 id="rune">rune&lt;/h3>
+&lt;p>int32 4个字节 单括号字面量&lt;/p>
+&lt;h1 id="关键字">关键字&lt;/h1>
+&lt;h2 id="switch">switch&lt;/h2>
+&lt;ul>
+&lt;li>不需要break语句&lt;/li>
+&lt;li>支持表达式&lt;/li>
+&lt;/ul>
+&lt;h1 id="容器">容器&lt;/h1>
+&lt;h2 id="slice---切片">Slice - 切片&lt;/h2>
+&lt;p>&lt;strong>&lt;a href="https://go.dev/blog/slices-intro">Go Slices: usage and internals&lt;/a>&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>初始化， &lt;code>letters := []string{&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;}&lt;/code>&lt;/li>
+&lt;li>make初始化， &lt;code>s := make([]byte, 5(leg), 5(cap,可选，不填写默认与长度相同))&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>与Java不同，扩容后返回新Slicce，一定要接收返回值&lt;/li>
+&lt;li>nil slice 支持append&lt;/li>
+&lt;li>s[x:y] 共享底层数据，小Slice引用大Slice，可能会早成无法被垃圾回收，使用复制去处对大Slice的引用&lt;/li>
+&lt;/ul>
+&lt;h2 id="map">Map&lt;/h2>
+&lt;ol>
+&lt;li>初始化 &lt;code>n := map[string]int{&amp;quot;foo&amp;quot;: 1, &amp;quot;bar&amp;quot;: 2}&lt;/code>&lt;/li>
+&lt;li>make初始化 &lt;code>m := make(map[string]int)&lt;/code>&lt;/li>
+&lt;li>&lt;code>v1 := m[&amp;quot;k1&amp;quot;]&lt;/code>&lt;/li>
+&lt;li>&lt;code>v2, ok := m[&amp;quot;k2&amp;quot;]&lt;/code> ok 判断是否存在，主要用于区分零值&lt;/li>
+&lt;/ol>
+&lt;h2 id="range--迭代器">range -迭代器&lt;/h2>
+&lt;ol>
+&lt;li>数组 or 切片 &lt;code>for i, num := range nums&lt;/code>&lt;/li>
+&lt;li>字典 &lt;code>for k, v := range kvs&lt;/code> &lt;code>for k := range kvs&lt;/code>&lt;/li>
+&lt;li>字符串 &lt;code>for offset, runeValue := range &amp;quot;go&amp;quot;&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h1 id="struct">Struct&lt;/h1>
+&lt;h3 id="参数传递">参数传递&lt;/h3>
+&lt;p>Go 语言支持值传递，也支持指针传递。值传递涉及到结构体字段的浅拷贝，指针传递会共享结构体内容，只会拷贝指针地址&lt;/p></description></item></channel></rss>

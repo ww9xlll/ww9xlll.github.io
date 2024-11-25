@@ -1,1 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>command on Wei's Note</title><link>https://blog.ww93.fun/tags/command/</link><description>Recent content in command on Wei's Note</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>ww9xlll</copyright><lastBuildDate>Thu, 05 Jan 2023 22:20:34 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/command/index.xml" rel="self" type="application/rss+xml"/><item><title>一些命令</title><link>https://blog.ww93.fun/post/some-command/</link><pubDate>Thu, 05 Jan 2023 22:20:34 +0800</pubDate><guid>https://blog.ww93.fun/post/some-command/</guid><description>Linux ssh ssh会话克隆，不用重复输入密码 编辑 ~/.ssh/config 1 2 3 4 Host * ControlMaster auto ControlPath ~/.ssh/%h-%p-%r ControlPersist yes 参考自 让mac的终端实现克隆会话功能 文件传输 从服务器上下载文件 1 scp root@192.168.2.1:/path/filename /local_path 上传</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Command on Wei's Note</title><link>https://blog.ww93.fun/tags/command/</link><description>Recent content in Command on Wei's Note</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 05 Jan 2023 22:20:34 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/command/index.xml" rel="self" type="application/rss+xml"/><item><title>一些命令</title><link>https://blog.ww93.fun/post/some-command/</link><pubDate>Thu, 05 Jan 2023 22:20:34 +0800</pubDate><guid>https://blog.ww93.fun/post/some-command/</guid><description>&lt;h1 id="linux">Linux&lt;/h1>
+&lt;h2 id="ssh">ssh&lt;/h2>
+&lt;h3 id="ssh会话克隆不用重复输入密码">ssh会话克隆，不用重复输入密码&lt;/h3>
+&lt;p>编辑 &lt;code>~/.ssh/config&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Host *
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>    ControlMaster auto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>    ControlPath ~/.ssh/%h-%p-%r
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>    ControlPersist yes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>参考自 &lt;strong>&lt;a href="https://michaelyou.github.io/2015/05/19/%E8%AE%A9mac%E7%9A%84%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E5%85%8B%E9%9A%86%E4%BC%9A%E8%AF%9D%E5%8A%9F%E8%83%BD/">让mac的终端实现克隆会话功能&lt;/a>&lt;/strong>&lt;/p>
+&lt;h2 id="文件传输">文件传输&lt;/h2>
+&lt;h3 id="从服务器上下载文件">从服务器上下载文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp root@192.168.2.1:/path/filename /local_path
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="上传本地文件到服务器">上传本地文件到服务器&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp /local_path/filename root@192.168.2.1:/path
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="从服务器下载整个目录">从服务器下载整个目录&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp -r root@192.168.2.1:/remote_path（远程目录） /local_path
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="上传目录到服务器">上传目录到服务器&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp  -r /local_path root@192.168.2.1:/remote_path
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="获取服务器外网ip">获取服务器外网IP&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl cip.cc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl ip.cip.cc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl ifconfig.io
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="git">Git&lt;/h2>
+&lt;h3 id="只下载最新代码">只下载最新代码&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone --depth&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> https://github.com/xxx/xxx.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="mysql">Mysql&lt;/h2>
+&lt;h3 id="执行sql文件">执行sql文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mysql -u user -h 192.168.2.1 -p&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source /path/x.sql
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

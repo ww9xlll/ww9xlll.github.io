@@ -1,1 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>obsidian on Wei's Note</title><link>https://blog.ww93.fun/tags/obsidian/</link><description>Recent content in obsidian on Wei's Note</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>ww9xlll</copyright><lastBuildDate>Fri, 17 Feb 2023 20:47:00 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/obsidian/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian不仅仅是一款笔记软件</title><link>https://blog.ww93.fun/post/obsidian/</link><pubDate>Fri, 17 Feb 2023 20:47:00 +0800</pubDate><guid>https://blog.ww93.fun/post/obsidian/</guid><description>前言 在使用Obsidian之前，我长时间使用Notion作为自己的主力笔记软件，Notion足够优秀，但是服务一旦挂掉，我们的笔记就会无法访</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Obsidian on Wei's Note</title><link>https://blog.ww93.fun/tags/obsidian/</link><description>Recent content in Obsidian on Wei's Note</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Feb 2023 20:47:00 +0800</lastBuildDate><atom:link href="https://blog.ww93.fun/tags/obsidian/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian不仅仅是一款笔记软件</title><link>https://blog.ww93.fun/post/obsidian/</link><pubDate>Fri, 17 Feb 2023 20:47:00 +0800</pubDate><guid>https://blog.ww93.fun/post/obsidian/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在使用Obsidian之前，我长时间使用Notion作为自己的主力笔记软件，Notion足够优秀，但是服务一旦挂掉，我们的笔记就会无法访问，当然Notion一年可用时间应该有99.999%，但是不怕一万就怕&amp;hellip;，另外Notion &lt;strong>云端存储&lt;/strong>，不能离线阅读，但现在离线的场景其实也基本没有🐶，所以离线也只是个伪需求，除非在信号差的地方。最近Web3这个概念火起来了，其中一个特点就是去中心化，追随下时代的潮流。&lt;/p>
+&lt;p>Obsidian真的适合喜欢折腾的同学，在Obsdian我仿佛找到当初在大学给Android手机刷Windows Phone的感觉，时间过得真快不再是少年，一颗爱折腾的心仍然不变。或许真的有点喜欢折腾笔记软件，大学毕业设计就是开发了一款Android版的PKM，但是源代码已经找不到了，不然得看下当时写的代码有多少槽点🐶。&lt;/p>
+&lt;h2 id="介绍">介绍&lt;/h2>
+&lt;p>优势：&lt;/p>
+&lt;ul>
+&lt;li>文本记录，方便迁移，记录各种metadata&lt;/li>
+&lt;li>笔记版的vscode，插件市场丰富，够折腾，满足个性化定制&lt;/li>
+&lt;/ul>
+&lt;p>缺点：&lt;/p>
+&lt;ul>
+&lt;li>似乎不支持Notion那样子的Block，不方便拖拽&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用">使用&lt;/h2>
+&lt;p>我平时除了使用核心的双链笔记外，还会把他当作个人本地数据库使用，主要利用Markdown metadata记录元数据，Templater方便的复用模版，配合Dataview table汇总输出，当然这些加起来其实就是Notion的database（Obsidian有个类似的插件 DB Folder），而且Notion数据记录形式会更加高效，但是Obsdian可以输出的不仅仅表格，还是可以使Charts和Heatmap等图表形式。&lt;/p>
+&lt;p>记录场景：&lt;/p>
+&lt;ul>
+&lt;li>阅读清单，在读，想读，读过，之前用豆瓣书单&lt;/li>
+&lt;li>影视记录，在看，想看，看过&lt;/li>
+&lt;li>软件订阅，订阅记录，变更记录&lt;/li>
+&lt;li>投资记录，基金，股票，不过这个场景Beancount更合适&lt;/li>
+&lt;/ul>
+&lt;p>记录意义：&lt;/p>
+&lt;ul>
+&lt;li>习惯追踪&lt;/li>
+&lt;li>输出年度复盘&lt;/li>
+&lt;/ul>
+&lt;h3 id="同步">同步&lt;/h3>
+&lt;p>利用git来支持历史版本，手动push到Github，社区有一个自动定时同步远程仓库的插件，但我觉得没必要，就像自己平时提交代码一样来提交笔记，也可以维护commit message。同时我也会使用iCloud进行多重备份&lt;/p>
+&lt;h3 id="移动端">移动端&lt;/h3>
+&lt;p>Obsidian有官方移动端，利用iCloud来同步，满足自己的查询需求，移动端本身不方便做复杂的编辑，可以记录一些灵感和想法。&lt;/p>
+&lt;p>&lt;a href="https://github.com/chenyukang/obweb">Obweb : Obsidian + Web = Obsdian on Mobile + Flomo&lt;/a> 这里有个开源移动端访问方案，可以做更多定制化&lt;/p>
+&lt;h3 id="一些插件">一些插件&lt;/h3>
+&lt;ul>
+&lt;li>Daily notes，基于这个日记&lt;a href="https://dannb.org/blog/2022/obsidian-daily-note-template/">模版&lt;/a>针对自己做了些改良，现在每天的收获和随机想法都记录在里边&lt;/li>
+&lt;li>Dataview，必装插件，像操作数据库一样来维护自己的笔记系统，通过metadata建立索引，自定义查询归纳文档，页面内嵌变量，执行自定义js脚本&lt;/li>
+&lt;li>Templater，模版复用、插入变量，比如结合Banners随机生成封面图、emojj icon，笔记颜值瞬间增加不少&lt;/li>
+&lt;li>Mind Map，实时预览脑图，整理笔记也变成了一种享受&lt;/li>
+&lt;li>Tasks，强大的任务管理，还可以生成周期任务&lt;/li>
+&lt;li>Calendar，配合Daily Note使用，可以以日历的形式显示某天的TODO是否完成&lt;/li>
+&lt;li>Omnivore，文章可以按天归档，导出文章、高亮和笔记，一款开源ReadItLater软件，作为Readwise Reader的替代品&lt;/li>
+&lt;li>Weread，同步微信读书中书籍元信息、划线和想法&lt;/li>
+&lt;li>QuickAdd，快速添加，支持加载js脚本，比如调用API拉取电影metadata，和Templater多少有点重合，感觉还是Templater用起来更舒服一点&lt;/li>
+&lt;li>Periodic Note，周期记录，方便记录周报、月报、年报&lt;/li>
+&lt;li>Annotator，PDF, EPUB 高亮标注、跳转&lt;/li>
+&lt;/ul>
+&lt;h3 id="tips">Tips&lt;/h3>
+&lt;ul>
+&lt;li>文件名以英文或数字开头， &lt;code>Command + O&lt;/code> 方便快速打开和检索，不用切换输入法&lt;/li>
+&lt;li>不要在文件夹的组织上花费过多时间，每日的想法和TODO记录在Daily notes，只有十分明确的笔记主题才去专有页面记录&lt;/li>
+&lt;li>尽可能多的去使用双链和标签，使笔记之间产生关联，构建网络，方便回溯&lt;/li>
+&lt;li>不要花费过多的时间折腾插件和主题，打造自己舒服的工作流，专注于写作的内容&lt;/li>
+&lt;/ul>
+&lt;h2 id="新发现">新发现&lt;/h2>
+&lt;p>&lt;a href="https://obsidian-plugin-stats.vercel.app/new">obsidian-plugin-stats&lt;/a> new 模块可以看到新的有意思的插件，比如&lt;/p></description></item></channel></rss>
